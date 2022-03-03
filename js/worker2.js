@@ -4,9 +4,7 @@ function getRate(id, dataStart, dataEnd){
     .then(postMessage)
     
 }
-
 function sendRate({data}) {
     getRate(data.id, data.dataStart, data.dataEnd);
 }
-
 addEventListener('message', sendRate);

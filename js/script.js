@@ -62,7 +62,6 @@ const mapping = {
         })
     }
 }
-
 function getCur(result) {
     deleteTr()
     const el = result.filter((el) => {
@@ -75,31 +74,22 @@ function getCur(result) {
     count = el.Cur_QuotName
     workerTwo(el.Cur_ID, el.Cur_DateStart, el.Cur_DateEnd)
 }
-
-
 worker.addEventListener('message', ({data}) => {
     mapping[data.msg](data.payload);
 });
-
 let arrCurs 
 const worker2 = new Worker('/js/worker2.js')
-
 function workerTwo(idCur, start, end) {
-
 deleteTr()
-
 worker2.postMessage({
     id: idCur,
     dataStart: start,
     dataEnd: end
 });
-
 }
-
 worker2.addEventListener('message', ({data}) => {
     workerData({data}.data)
 })
-
 function workerData(el) {
     let rateArr = el;
     rateArr.forEach((json) => {
