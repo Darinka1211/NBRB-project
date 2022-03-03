@@ -129,28 +129,25 @@ function deleteTr() {
     const tr = document.querySelectorAll('td');
     tr.forEach(e => e.remove('tr'))
 }
-
-
 function createChart() {
     chart2.innerHTML = '';
     google.charts.load('current', {packages: ['corechart', 'line']});
     google.charts.setOnLoadCallback(drawBackgroundColor);
 }
-
 function drawBackgroundColor() {
-    var data = new google.visualization.DataTable();
+    const data = new google.visualization.DataTable();
     data.addColumn('datetime', 'X');
-    data.addColumn('number', 'Rate');
+    data.addColumn('number', 'Курс');
     data.addRows(arrCurs);
-    var options = {
+    const options = {
         hAxis: {
-        title: 'Дата'
+        title: 'Период'
         },
         vAxis: {
         title: 'Курс'
         },
-        backgroundColor: '#fff'
+        backgroundColor: 'rgba(0, 142, 255, 0.6)'
     };
-    var chart = new google.visualization.LineChart(chart2);
+    const chart = new google.visualization.LineChart(chart2);
     chart.draw(data, options);
 }
