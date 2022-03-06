@@ -1,5 +1,4 @@
 const today = dayjs().format('YYYY-MM-DD');
-
 const fromDate = document.querySelector('.start')
 const toDate = document.querySelector('.end')
 const select = document.querySelector('.money')
@@ -13,7 +12,6 @@ month.addEventListener('click', () => stage(-1, `month`))
 quarter.addEventListener('click', () => stage(-3, `month`))
 year.addEventListener('click', () => stage(-1, `year`))
 select.addEventListener('change', deleteTr)
-
 fromDate.addEventListener('change', input)
 toDate.addEventListener('change', input)
 
@@ -21,13 +19,13 @@ const chart2 = document.getElementById('chart_div')
 
 function input() {
     if(fromDate.value&&toDate.value) {
-        workerTwo(select.value, fromDate.value, toDate.value)
+        addDate(select.value, fromDate.value, toDate.value)
     }
 }
 
 function stage(n, m) {
     const before = dayjs().add(n, m).format('YYYY-MM-DD')
-    workerTwo(select.value, before, today)
+    addDate(select.value, before, today)
 }
 
 const worker = new Worker('/js/worker.js')
@@ -72,14 +70,14 @@ function getCur(result) {
     toDate.min = el.Cur_DateStart.slice(0,10)
     toDate.max = el.Cur_DateEnd.slice(0,10)
     count = el.Cur_QuotName
-    workerTwo(el.Cur_ID, el.Cur_DateStart, el.Cur_DateEnd)
+    addDate(el.Cur_ID, el.Cur_DateStart, el.Cur_DateEnd)
 }
 worker.addEventListener('message', ({data}) => {
     mapping[data.msg](data.payload);
 });
 let arrCurs 
 const worker2 = new Worker('/js/worker2.js')
-function workerTwo(idCur, start, end) {
+function addDate(idCur, start, end) {
 deleteTr()
 worker2.postMessage({
     id: idCur,
@@ -100,7 +98,6 @@ function workerData(el) {
     rateArr.forEach(el => arrCurs.push([new Date(el.Date), el.Cur_OfficialRate]))
     createChart()
 }
-
 function createTr (el1, el2) {
     const div = document.querySelector('.tb');
     const table = document.createElement('table');
@@ -114,7 +111,6 @@ function createTr (el1, el2) {
     table.appendChild(tr);
     div.appendChild(table);
 }
-
 function deleteTr() {
     const tr = document.querySelectorAll('td');
     tr.forEach(e => e.remove('tr'))
@@ -136,7 +132,9 @@ function drawBackgroundColor() {
         vAxis: {
         title: 'Курс'
         },
-        backgroundColor: 'rgba(0, 142, 255, 0.6)'
+        backgroundColor: '#78c1f5',
+        width: 650,
+        height: 340,
     };
     const chart = new google.visualization.LineChart(chart2);
     chart.draw(data, options);
