@@ -11,7 +11,9 @@ week.addEventListener('click', () => stage(-1, `week`))
 month.addEventListener('click', () => stage(-1, `month`))
 quarter.addEventListener('click', () => stage(-3, `month`))
 year.addEventListener('click', () => stage(-1, `year`))
+
 select.addEventListener('change', deleteTr)
+
 fromDate.addEventListener('change', input)
 toDate.addEventListener('change', input)
 
@@ -28,41 +30,39 @@ function stage(n, m) {
     addDate(select.value, before, today)
 }
 
+function createSelect (num){
+    num.forEach(el => { 
+    const option = document.createElement('option')
+    option.innerText = el.Cur_Name;
+    option.value = el.Cur_ID;
+    select.append(option);
+    })
+}
+
 const worker = new Worker('/js/worker.js')
+
+worker.addEventListener('message', ({data}) => {
+    mapping[data.msg](data.payload);
+    
+});
+
+let Curs;
+
 const mapping = {
-    currentRate: (payload) => {
-        result = payload.map(
-            ({
-                Cur_ID,
-                Cur_Name,
-                Cur_DateStart,
-                Cur_DateEnd,
-                Cur_QuotName
-            }) => {
-                return {
-                    Cur_ID,
-                    Cur_Name,
-                    Cur_DateStart,
-                    Cur_DateEnd,
-                    Cur_QuotName
-                };
-            });
-        result.forEach(el => {
-            if(parseInt(el.Cur_DateEnd) > today.slice(0,4)){
-        let option = document.createElement('option')
-        option.innerText = el.Cur_Name;
-        option.value = el.Cur_ID;
-        select.append(option);}
-        })
-        select.addEventListener('change', () => {
-            deleteTr()
-            getCur(result);
-        })
+    cur: (payload) => {
+        Curs = payload;
+        createSelect(Curs);
     }
 }
-function getCur(result) {
+
+select.addEventListener('change', () => {
     deleteTr()
-    const el = result.filter((el) => {
+    getCur(Curs);
+  })
+
+function getCur(Curs) {
+    deleteTr()
+    const el = Curs.filter((el) => {
         return el.Cur_ID == select.value
     })[0];
     fromDate.min = el.Cur_DateStart.slice(0,10)
@@ -72,9 +72,7 @@ function getCur(result) {
     count = el.Cur_QuotName
     addDate(el.Cur_ID, el.Cur_DateStart, el.Cur_DateEnd)
 }
-worker.addEventListener('message', ({data}) => {
-    mapping[data.msg](data.payload);
-});
+
 let arrCurs 
 const worker2 = new Worker('/js/worker2.js')
 function addDate(idCur, start, end) {
@@ -98,6 +96,7 @@ function workerData(el) {
     rateArr.forEach(el => arrCurs.push([new Date(el.Date), el.Cur_OfficialRate]))
     createChart()
 }
+
 function createTr (el1, el2) {
     const div = document.querySelector('.tb');
     const table = document.createElement('table');
@@ -111,9 +110,9 @@ function createTr (el1, el2) {
     table.appendChild(tr);
     div.appendChild(table);
 }
-function deleteTr() {
+ function deleteTr() {
     const tr = document.querySelectorAll('td');
-    tr.forEach(e => e.remove('tr'))
+    tr.forEach(e => e.remove('tr')) 
 }
 function createChart() {
     chart2.innerHTML = '';

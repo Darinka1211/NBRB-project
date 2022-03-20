@@ -1,29 +1,26 @@
 body {
-background-image: url(https://вебджем.рф/800/600/https/funart.pro/uploads/posts/2020-04/1587307928_22-p-stilnie-foni-dlya-saitov-48.jpg) ;   
-
-margin-top: 20px;
+  background-image: url(https://вебджем.рф/800/600/https/funart.pro/uploads/posts/2020-04/1587307928_22-p-stilnie-foni-dlya-saitov-48.jpg) ;   
+  margin-top: 20px;
 }
+
 .container {
-display: flex;  
-flex-direction: column;
-justify-content: center;
-/*margin-left: 50px; */
-width: auto;
-/*height: 800px;*/
-
-}
-.name {
-    display: inline-block;
-    text-shadow:
-      1px 1px 1px white,
-      1px -1px 1px white,
-      -1px 1px 1px white,
-      -1px -1px 1px white;
-    color: steelblue;
-    transition: all 2s;
-    text-align: center;
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+  width: auto;
   }
-   .name:after {
+.name {
+  display: inline-block;
+  text-shadow:
+    1px 1px 1px white,
+    1px -1px 1px white,
+    -1px 1px 1px white,
+    -1px -1px 1px white;
+  color: steelblue;
+  transition: all 2s;
+  text-align: center;
+  }
+.name:after {
     content: "";
     display: block;
     position: relative;
@@ -34,106 +31,117 @@ width: auto;
     bottom: .15em;
     transition: all 2s;
   }
-    .name:hover:after {
+  .name:hover:after {
     width: 0%;
     border-bottom-width: 1px;
-  }
+    }
+  .p {
+    color: rgb(17, 180, 225);
+    text-align: center;
+    }
+
   .header {
-   margin: 20px;
-   display: flex;
-   justify-content: center;
-  }
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    }
 
   .date{
     display: flex;
     justify-content: center;
+    }
 
-  }
-  .time
-  {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: 20px ;
-  margin-top: 0px;
-  }
+  .time{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 20px ;
+    margin-top: 0px;
+    }
   .btn{
-      display: flex;
-      flex-direction: row;
-      justify-content:center;
-     width: auto;
-     text-align: center;
-      
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    width: auto;
+    text-align: center;
   }
+
   .btn1,.btn2,.btn3,.btn4 {
     
-        display:block;
-        width:80px;
-    margin: 10px 30px;
-        background-color:#3bb3e0;
-        font-family: 'Open Sans', sans-serif;
-        font-size:12px;
-    font-weight:bold;
-        text-decoration:none;
-        color:#053154;
-    text-shadow:rgba(255,255,255,0.6) 1px 1px 0;
-        position:relative;
-        padding:10px 20px;
-        padding-right:50px;
-        background-image: linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-        background-image: -o-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-        background-image: -moz-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-        background-image: -webkit-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-        background-image: -ms-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-        background-image: -webkit-gradient(
-        linear,
-        left bottom,
-        left top,
-        color-stop(0, rgb(44,160,202)),
-        color-stop(1, rgb(62,184,229))
-        );
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -o-border-radius: 5px;
-        border-radius: 5px;
-        -webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 3px 0px 0px #156785, 0px 10px 5px #999;
-        -moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 3px 0px 0px #156785, 0px 10px 5px #999;
-        -o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 3px 0px 0px #156785, 0px 10px 5px #999;
-        box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 10px 5px #999;
-}
-.result {
-display: flex;
-flex-direction: row;
-justify-content: center;
-/*margin-left: 50px;*/
-}
-.tb{
-margin-left: 100px;
-color: rgb(17, 180, 225);
-transition: all 2s;
-text-align: center;
-}
-th {
-  text-align:center; 
-  background: #3bb3e0); 
-  margin-left: 100px;
-  padding: 10px; /* Поля вокруг содержимого ячеек */
-  border: 1px solid black; /* Граница вокруг ячеек */
-  color: rgb(29, 132, 216);
-  text-shadow:
-1px 1px 1px white,
-1px -1px 1px white,
--1px 1px 1px white,
--1px -1px 1px white; }
+          display:block;
+          width:80px;
+          margin: 10px 30px;
+          background-color:#3bb3e0;
+          font-family: 'Open Sans', sans-serif;
+          font-size:12px;
+      font-weight:bold;
+          text-decoration:none;
+          color:#053154;
+      text-shadow:rgba(255,255,255,0.6) 1px 1px 0;
+          position:relative;
+          padding:10px 20px;
+          padding-right:50px;
+          background-image: linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+          background-image: -o-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+          background-image: -moz-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+          background-image: -webkit-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+          background-image: -ms-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+          background-image: -webkit-gradient(
+          linear,
+          left bottom,
+          left top,
+          color-stop(0, rgb(44,160,202)),
+          color-stop(1, rgb(62,184,229))
+          );
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -o-border-radius: 5px;
+          border-radius: 5px;
+          -webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 3px 0px 0px #156785, 0px 10px 5px #999;
+          -moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 3px 0px 0px #156785, 0px 10px 5px #999;
+          -o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 3px 0px 0px #156785, 0px 10px 5px #999;
+          box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 10px 5px #999;
+  }
+  .result {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    }
 
+  .tb{
+    margin-left: 100px;
+    color: rgb(17, 180, 225);
+    transition: all 2s;
+    text-align: center;
+    align-items: center;
+    overflow-y: auto;
+    height: 380px;
+    width: 300px; 
+  }
+  
+  th {
+    text-align:center; 
+    background: #3bb3e0); 
+    margin-left: 100px;
+    padding: 10px; /* Поля вокруг содержимого ячеек */
+    border: 1px solid black; /* Граница вокруг ячеек */
+    color: rgb(29, 132, 216);
+    text-shadow:
+      1px 1px 1px white,
+      1px -1px 1px white,
+      -1px 1px 1px white,
+      -1px -1px 1px white;
+      }
+ 
 
+/*
 @media screen and (max-width: 1200px) {
 	.container {
 		width: 960px;
 	}
 }
-/* 768px - 992px */
-@media screen and (max-width: 992px) {
+/* 768px - 992px 
+ @media screen and (max-width: 992px) {
 	.container {
 		width: 720px;
 	}
@@ -141,7 +149,7 @@ th {
   display: flex;
   flex-direction: column;
   }
-/* 576px - 768px */
+/* 576px - 768px 
 @media screen and (max-width: 768px) {
 	.container {
 		width: 540px;
@@ -154,7 +162,7 @@ th {
       text-align:center; 
            	}
 
-/* 320px - 576px */
+/* 320px - 576px 
 @media screen and (max-width: 576px) {
 	.container {
 		width: 90%;
