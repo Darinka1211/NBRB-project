@@ -132,7 +132,7 @@ function drawBackgroundColor() {
         title: 'Курс'
         },
         backgroundColor: '#78c1f5',
-        width: 650,
+        width: 550,
         height: 340,
     };
     const chart = new google.visualization.LineChart(chart2);

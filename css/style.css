@@ -1,6 +1,43 @@
 body {
   background-image: url(https://вебджем.рф/800/600/https/funart.pro/uploads/posts/2020-04/1587307928_22-p-stilnie-foni-dlya-saitov-48.jpg) ;   
-  margin-top: 20px;
+  /*margin-top: 20px;*/
+  margin: 0px;
+  
+}
+.header_logo{
+  display: flex;
+  
+  justify-content: space-between;
+  height: 80px;
+  background-color:#0c1734 ;
+  margin: 0px;
+}
+
+img {
+  height: 80px;
+  width: 300px; 
+  margin: 0px;
+  }
+.header_rihgt{
+  margin: 0px;
+  height: 80px;
+  width: 300px;
+  text-align: center;
+  padding-top: 30px;
+  size: 10px;
+  color: #eee;
+  text-shadow: 0 2px 0 #136ed1,
+      0 2px 0 #126ac0,
+      0 3px 0 #1160b6,
+      0 4px 0 #105cad,
+      0 5px 0 #0f56a2,
+      0 6px 1px rgba(0,0,0,.1),
+      0 0 5px rgba(0,0,0,.1),
+      0 1px 3px rgba(0,0,0,.3),
+      0 3px 5px rgba(0,0,0,.2),
+      0 5px 10px rgba(0,0,0,.25),
+      0 10px 10px rgba(0,0,0,.2),
+      0 20px 20px rgba(0,0,0,.15);
 }
 
 .container {
@@ -9,6 +46,8 @@ body {
   justify-content: center;
   width: auto;
   }
+
+
 .name {
   display: inline-block;
   text-shadow:
@@ -19,6 +58,7 @@ body {
   color: steelblue;
   transition: all 2s;
   text-align: center;
+  height: 100px;
   }
 .name:after {
     content: "";
@@ -106,6 +146,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: 600px;
     }
 
   .tb{
@@ -131,29 +172,39 @@ body {
       1px -1px 1px white,
       -1px 1px 1px white,
       -1px -1px 1px white;
-      }
+    }
  
 
-/*
+
 @media screen and (max-width: 1200px) {
 	.container {
 		width: 960px;
 	}
 }
-/* 768px - 992px 
+/* 768px - 992px */
  @media screen and (max-width: 992px) {
+   body {
+     width: auto;
+
+   }
 	.container {
 		width: 720px;
 	}
   .result{
-  display: flex;
-  flex-direction: column;
-  }
-/* 576px - 768px 
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    width: 700px;
+    }
+/* 576px - 768px */
 @media screen and (max-width: 768px) {
+  body {
+    width: auto;
+
+  }
 	.container {
-		width: 540px;
-	}
+    width: 540px;
+    }
   .result {
     display: flex;
     flex-direction: column;
@@ -162,15 +213,70 @@ body {
       text-align:center; 
            	}
 
-/* 320px - 576px 
+
+/*320px - 576px */
 @media screen and (max-width: 576px) {
+  body{
+    width: auto;
+    }
+
+  .header_logo{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    background-color:#0c1734 ;
+    margin: 0px;
+    width: auto;
+  }
+  
+  
+  .header_rihgt{
+    margin: 0px;
+    height: 100px;
+    width: 100px;
+    text-align: center;}
+
 	.container {
-		width: 90%;
-	}
-  .result {
     display: flex;
     flex-direction: column;
+		width: auto;
+	}
+  .btn{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    width: auto;
+    text-align: center;
+  }
+  .header {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     }
-    th {
+
+  .date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+  .time{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 20px ;
+    margin-top: 0px;
+    }
+.chart_div{
+  width: 350px;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    }
+  th {
       text-align:center; 
            	}
