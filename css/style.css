@@ -7,7 +7,7 @@ body {
 .header_logo{
   display: flex;
   justify-content: space-between;
-  height: 150px;
+  height: 80px;
   background-color:#0c1734 ;
   margin: 0px;
 }
