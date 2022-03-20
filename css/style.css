@@ -6,11 +6,14 @@ body {
 }
 .header_logo{
   display: flex;
-  
   justify-content: space-between;
-  height: 80px;
+  height: 150px;
   background-color:#0c1734 ;
   margin: 0px;
+}
+.header_left {
+  display: flex;
+  justify-content: center;
 }
 
 img {
@@ -19,6 +22,7 @@ img {
   margin: 0px;
   }
 .header_rihgt{
+  
   margin: 0px;
   height: 80px;
   width: 300px;
@@ -34,6 +38,7 @@ img {
       0 6px 1px rgba(0,0,0,.1),
       0 0 5px rgba(0,0,0,.1),
       0 1px 3px rgba(0,0,0,.3),
+
       0 3px 5px rgba(0,0,0,.2),
       0 5px 10px rgba(0,0,0,.25),
       0 10px 10px rgba(0,0,0,.2),
@@ -46,7 +51,6 @@ img {
   justify-content: center;
   width: auto;
   }
-
 
 .name {
   display: inline-block;
@@ -75,10 +79,7 @@ img {
     width: 0%;
     border-bottom-width: 1px;
     }
-  .p {
-    color: rgb(17, 180, 225);
-    text-align: center;
-    }
+  
 
   .header {
     margin: 20px;
@@ -162,7 +163,7 @@ img {
   
   th {
     text-align:center; 
-    background: #3bb3e0); 
+    background: #3bb3e0; 
     margin-left: 100px;
     padding: 10px; /* Поля вокруг содержимого ячеек */
     border: 1px solid black; /* Граница вокруг ячеек */
@@ -176,13 +177,13 @@ img {
  
 
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
 	.container {
 		width: 960px;
 	}
 }
 /* 768px - 992px */
- @media screen and (max-width: 992px) {
+/*  @media screen and (max-width: 992px) {
    body {
      width: auto;
 
@@ -196,7 +197,7 @@ img {
     width: auto;
     width: 700px;
     }
-/* 576px - 768px */
+/* 576px - 768px 
 @media screen and (max-width: 768px) {
   body {
     width: auto;
@@ -212,34 +213,61 @@ img {
     th {
       text-align:center; 
            	}
+ */
 
-
-/*320px - 576px */
+/*320px - 576px */ 
 @media screen and (max-width: 576px) {
   body{
-    width: auto;
+    width: 350px;
+    }
+    .header_logo{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100px;
+      background-color:#0c1734 ;
+      margin: 0px;
+      width: auto;
     }
 
-  .header_logo{
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    background-color:#0c1734 ;
-    margin: 0px;
-    width: auto;
-  }
-  
-  
-  .header_rihgt{
-    margin: 0px;
-    height: 100px;
-    width: 100px;
-    text-align: center;}
+    img {
+      height: 60px;
+      width: auto; 
+      margin: 0px;
+       ;
+      }  
+      .header_rihgt{
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+        height: 80px;
+        width: 300px;
+        text-align: center;
+        padding-top: 30px;
+        size: 10px;
+        color: #eee;
+        text-shadow: 0 2px 0 #136ed1,
+            0 2px 0 #126ac0,
+            0 3px 0 #1160b6,
+            0 4px 0 #105cad,
+            0 5px 0 #0f56a2,
+            0 6px 1px rgba(0,0,0,.1),
+            0 0 5px rgba(0,0,0,.1),
+            0 1px 3px rgba(0,0,0,.3),
+      
+            0 3px 5px rgba(0,0,0,.2),
+            0 5px 10px rgba(0,0,0,.25),
+            0 10px 10px rgba(0,0,0,.2),
+            0 20px 20px rgba(0,0,0,.15);
+      }
+ 
 
 	.container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 		width: auto;
+    width: 350px;
 	}
   .btn{
     display: flex;
@@ -249,7 +277,7 @@ img {
     text-align: center;
   }
   .header {
-    margin: 20px;
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -257,16 +285,16 @@ img {
 
   .date{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
+    width: auto;
     }
 
-  .time{
+    .name {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 20px ;
-    margin-top: 0px;
+    
     }
 .chart_div{
   width: 350px;
@@ -277,6 +305,10 @@ img {
     flex-direction: column;
     width: 350px;
     }
-  th {
-      text-align:center; 
-           	}
+    .tb{
+    text-align: center;
+    align-items: center;
+    overflow-y: auto;
+    height: 350px;
+    width: 300px; 
+    }
